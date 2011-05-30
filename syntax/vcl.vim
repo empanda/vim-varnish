@@ -2,8 +2,8 @@
 " Filename:     vcl.vim
 " Language:     Varnish configuation Language, http://www.varnish-cache.org/wiki/VCL
 " Maintainer:   Elan Ruusamäe <glen@delfi.ee>
-" Version Info: $Revision: 1.5 $
-" Last Change:  $Date: 2010/04/05 15:28:52 $ UTC
+" Version Info: $Revision: 1.6 $
+" Last Change:  $Date: 2010/04/05 15:35:40 $ UTC
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -31,7 +31,7 @@ endif
 "syn match  vclFunctionName "\h[[:alnum:]_:]*" contained
 "syn match  vclFunctionName "\h\w*[^:]" contained
 "
-syn keyword vclOperator     set call return error esi synthetic include remove
+syn keyword vclOperator     set call return error esi synthetic include remove unset
 " return modes
 syn keyword vclModes        deliver pipe pass hash lookup discard fetch
 
@@ -44,7 +44,7 @@ syn match  vclSpecialCharacter display "L\='\\\o\{1,3}'"
 syn match  vclSpecialCharacter display "'\\x\x\{1,2}'"
 syn match  vclSpecialCharacter display "L'\\x\x\+'"
 
-syn keyword vclConditional  if else elseif
+syn keyword vclConditional  if else elsif elseif
 
 " Numbers
 syn match  vclNumbers  display transparent "\<\d\|\.\d" contains=vclNumber,vclNumberTime
