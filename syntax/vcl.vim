@@ -1,9 +1,9 @@
 " Vim syntax file
 " Filename:     vcl.vim
-" Language:     Varnish configuation Language, http://varnish-cache.org/wiki/VCL
+" Language:     Varnish configuation Language, http://www.varnish-cache.org/wiki/VCL
 " Maintainer:   Elan Ruusamäe <glen@delfi.ee>
-" Version Info: $Revision: 1.4 $
-" Last Change:  $Date: 2010/04/05 15:08:14 $ UTC
+" Version Info: $Revision: 1.5 $
+" Last Change:  $Date: 2010/04/05 15:28:52 $ UTC
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -31,7 +31,7 @@ endif
 "syn match  vclFunctionName "\h[[:alnum:]_:]*" contained
 "syn match  vclFunctionName "\h\w*[^:]" contained
 "
-syn keyword vclOperator     set call return error esi synthetic include
+syn keyword vclOperator     set call return error esi synthetic include remove
 " return modes
 syn keyword vclModes        deliver pipe pass hash lookup discard fetch
 
@@ -57,7 +57,7 @@ syn match  vclOption   /client\.ip/
 " server
 syn match  vclOption   /server\.\(ip\|port\)/
 " req
-syn match  vclOption   /req\.\(hash\|request\|url\|proto\|backend\|backend\.healthy\|grace\|xid\)/
+syn match  vclOption   /req\.\(hash\|request\|url\|proto\|backend\.healthy\|backend\|grace\|xid\)/
 " bereq.
 syn match  vclOption   /bereq\.\(request\|url\|proto\|connect_timeout\|first_byte_timeout\|between_bytes_timeout\)/
 " obj
