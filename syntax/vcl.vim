@@ -2,8 +2,8 @@
 " Filename:     vcl.vim
 " Language:     Varnish configuation Language, http://www.varnish-cache.org/
 " Maintainer:   Elan Ruusamäe <glen@delfi.ee>
-" Version Info: $Revision: 1.2 $
-" Last Change:  $Date: 2010/03/30 22:18:16 $ UTC
+" Version Info: $Revision: 1.3 $
+" Last Change:  $Date: 2010/03/30 22:19:14 $ UTC
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -45,7 +45,11 @@ unlet b:current_syntax
 syn region vclCBlock matchgroup=vclComment start=/C{/ end=/}C/ contains=@vclC keepend
 
 " Synthetic
-syn region vclSynthetic start=/{"/hs=s+2 end=/"}/he=e-2
+syn region vclSynthetic start=/{"/hs=s+2 end=/"}/he=e-2 contains=@vclHTML keepend
+
+" Allow html in synthetic
+syn include @vclHTML syntax/html.vim
+unlet b:current_syntax
 
 hi link vclCodeBlock	Function
 hi link vclComment 		Comment
